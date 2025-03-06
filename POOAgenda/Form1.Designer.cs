@@ -33,6 +33,10 @@
             TxtNombre = new TextBox();
             TxtTelefono = new TextBox();
             BtnAgregar = new Button();
+            DgvContactos = new DataGridView();
+            Contacto = new DataGridViewTextBoxColumn();
+            Agenda = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)DgvContactos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -69,18 +73,45 @@
             // 
             // BtnAgregar
             // 
-            BtnAgregar.Location = new Point(428, 184);
+            BtnAgregar.Location = new Point(55, 129);
             BtnAgregar.Name = "BtnAgregar";
             BtnAgregar.Size = new Size(94, 29);
             BtnAgregar.TabIndex = 4;
-            BtnAgregar.Text = "button1";
+            BtnAgregar.Text = "Agregar";
             BtnAgregar.UseVisualStyleBackColor = true;
+            BtnAgregar.Click += BtnAgregar_Click;
+            // 
+            // DgvContactos
+            // 
+            DgvContactos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvContactos.Columns.AddRange(new DataGridViewColumn[] { Contacto, Agenda });
+            DgvContactos.Location = new Point(39, 184);
+            DgvContactos.Name = "DgvContactos";
+            DgvContactos.RowHeadersWidth = 51;
+            DgvContactos.Size = new Size(300, 188);
+            DgvContactos.TabIndex = 5;
+            DgvContactos.CellContentClick += DgvContactos_CellContentClick;
+            // 
+            // Contacto
+            // 
+            Contacto.HeaderText = "Contacto";
+            Contacto.MinimumWidth = 6;
+            Contacto.Name = "Contacto";
+            Contacto.Width = 125;
+            // 
+            // Agenda
+            // 
+            Agenda.HeaderText = "Agenda";
+            Agenda.MinimumWidth = 6;
+            Agenda.Name = "Agenda";
+            Agenda.Width = 125;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(DgvContactos);
             Controls.Add(BtnAgregar);
             Controls.Add(TxtTelefono);
             Controls.Add(TxtNombre);
@@ -88,7 +119,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load_1;
+            ((System.ComponentModel.ISupportInitialize)DgvContactos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -100,5 +131,8 @@
         private TextBox TxtNombre;
         private TextBox TxtTelefono;
         private Button BtnAgregar;
+        private DataGridView DgvContactos;
+        private DataGridViewTextBoxColumn Contacto;
+        private DataGridViewTextBoxColumn Agenda;
     }
 }
